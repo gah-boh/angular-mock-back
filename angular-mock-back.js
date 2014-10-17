@@ -1,21 +1,19 @@
-;(function(window) {
-
-var baseConfig = {method: 'GET', code: 200};
+;(function(window, angular) {
 
 function angularMockBack(config) {
+	var baseConfig = {method: 'GET', code: 200};
 	var urlMappings = config.mappings;
 
 	angular.module(config.moduleName)
-		.config(function($provide) {
+		.config(['$provide', function($provide) {
 			$provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
-		})
+		}])
 		.run(['$httpBackend', '$window', function($httpBackend, $window) {
-			$httpBackend.whenGET(/\.html$/).passThrough();
+			$httpBackend.whenGET(/\.html/).passThrough();
 
 			var overrides = $window.location.search.slice(1).split('&');
 
 			urlMappings.forEach(function(mapping) {
-				var baseConfig = { method: 'GET', code: 200 };
 				var fullMapping = angular.extend({}, baseConfig, mapping);
 
 				if(overrides.length && mapping.hasOwnProperty('overrides')) {
@@ -37,5 +35,5 @@ function angularMockBack(config) {
 
 window.angularMockBack = angularMockBack;
 
-}(window));
+}(window, window.angular));
 
