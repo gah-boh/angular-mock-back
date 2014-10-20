@@ -1,5 +1,5 @@
 # Angular Mock Back
-A utility library to help with mocking your backend.
+A utility library to help with mocking your backend and backend-less development.
 
 ## Installation
 You can install this module with bower
