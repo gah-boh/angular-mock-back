@@ -25,6 +25,11 @@ function angularMockBack(config) {
 						});
 				}
 
+                if(fullMapping.passThrough === true) {
+                    $httpBackend.when(fullMapping.method, fullMapping.url).passThrough();
+                    return;
+                }
+
 				$httpBackend.when(fullMapping.method, fullMapping.url, fullMapping.data, fullMapping.headers)
 							.respond(fullMapping.code, fullMapping.body);
 			});

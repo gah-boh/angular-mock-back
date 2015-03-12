@@ -1,0 +1,21 @@
+{
+  "name": "angular-mock-back tests",
+  "version": "0.1.1",
+  "homepage": "https://github.com/gah-boh/angular-mock-back",
+  "authors": [
+    "Gabriel Obregon <gabo.obregon@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.12",
+    "angular-mocks": "~1.3.12"
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Mock Back Tests</title>
+    <base href="tests">
+</head>
+<body ng-app="mockBackApp">
+<div ng-controller="MainController as mainController">
+	<form>
+		<input type="text" ng-model="mainController.url">
+        <input type="text" ng-model="mainController.method">
+		<button ng-click="mainController.callUrl()">Call URL</button>
+	</form>
+	<span ng-bind="mainController.response"></span>
+    <span ng-bind="mainController.rejection"></span>
+    <span ng-bind="mainController.status"></span>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script>
+angular.module('mockBackApp', [])
+.controller('MainController', function($http) {
+    this.url = ''
+    this.response = '';
+    this.rejection = '';
+    this.status = '';
+    this.method = 'GET'
+    this.callUrl = function() {
+        var self = this;
+        $http({
+            method: self.method || 'GET',
+            url: self.url
+        })
+        .success(function(res) {
+            self.response = res;
+            self.rejection = '';
+        })
+        .error(function(err) {
+            self.rejection = err;
+            self.response = '';
+        })
+        .then(function(res) {
+            self.status = res.status;
+        })
+        .catch(function(res) {
+            self.status = res.status;
+        });
+    };
+});
+</script>
+<script src="/angular-mock-back.js"></script>
+<script src="mock-config.js"></script>
+</body>
+</html>
