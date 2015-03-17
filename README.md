@@ -38,7 +38,8 @@ mappings: [
 		url: <string> | <regex>,
 		body: <data to be returned>,
 		data: <string> | <regex>,
-		headers: <Object> | <function(Object)>
+		headers: <object> | <function(object)>,
+        passThrough: <boolean>
 	}
 ]
 ```
@@ -54,6 +55,7 @@ mappings: [
 	}
 ]
 ```
+Additional to all the properties from `$httpBackend.when` there is also a `passThrough` property. Setting it to `true` allows for the request to go to the server. It's very useful in overrides.
 
 #### Overrides
 You can override any part of the mapping. To do this you add an `overrides` property to the mapping. 
