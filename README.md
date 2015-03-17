@@ -11,6 +11,9 @@ bower install angular-mock-back
 ## Sample Project
 Look at [angular-mock-back-demo-app](https://github.com/gah-boh/angular-mock-back-demo-app) for examples.
 
+## Overview
+For a quick overview checkout the [ngEurope Lightning Talk](https://www.youtube.com/watch?v=E5pkE8qFCz0).
+
 ## Documentation
 Create a config object with the two following properties:
 
