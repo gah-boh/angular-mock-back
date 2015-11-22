@@ -1,6 +1,6 @@
 {
   "name": "angular-mock-back",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "",
   "main": "angular-mock-back.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.2",
+    "lodash.assign": "^3.2.0",
     "protractor": "^3.0.0",
     "run-sequence": "^1.1.5",
     "webpack": "^1.12.8",
