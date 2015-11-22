@@ -1,6 +1,7 @@
-dev-servier.js
+dev-server.js
 Gulpfile.js
 protractor.conf.js
 webpack.config.compile.js
 tests/
+tmp/
 
