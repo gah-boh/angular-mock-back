@@ -1,5 +1,3 @@
-;(function(window, angular) {
-
 function angularMockBack(config) {
 	var baseConfig = {method: 'GET', code: 200};
 	var urlMappings = config.mappings;
@@ -38,7 +36,5 @@ function angularMockBack(config) {
 
 }
 
-window.angularMockBack = angularMockBack;
-
-}(window, window.angular));
+module.exports = angularMockBack;
 
